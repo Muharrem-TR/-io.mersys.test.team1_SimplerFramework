@@ -32,7 +32,7 @@ public class DocumentTypesSteps extends BaseFunctions {
         clickFunction(dc.getAddButton());
     }
 
-    @And("Enter name as {string} and description as {string}")
+    @And("Enter name as {string} and description as {string} for Document Types")
     public void enterNameAndDescription(String name,String description) {
 //        sendKeysFunction(dc.getNameInput(),"MuharremTR2626");
 //        sendKeysFunction(dc.getDescription(),"Muharrem Karapazar Eskişehir 26");
@@ -40,7 +40,7 @@ public class DocumentTypesSteps extends BaseFunctions {
         sendKeysFunction(dc.getDescription(),description);
     }
 
-    @And("Fill in the form content")
+    @And("Fill in the form content for Document Types")
     public void fillInTheFormContent() {
         clickFunction(fc.getSwitchRequired());
         clickFunction(fc.getStageSelect());
@@ -67,5 +67,24 @@ public class DocumentTypesSteps extends BaseFunctions {
     @Then("Verify that there is no data to display")
     public void verifyThatThereIsNoDataToDisplay() {
         verifyContainsText(dc.getNoDataMessage(), "There is no data to display");
+    }
+
+    @And("Type {string} in the search field")
+    public void typeInTheSearchField(String searchData) {
+        sendKeysFunction(dc.getSearchInput(),searchData);
+    }
+
+    @And("Press the search button and edit the result")
+    public void pressTheSearchButtonAndEditTheResult() {
+        clickFunction(dc.getSearchButton());
+        clickFunction(dc.getEditButton());
+    }
+
+    @And("Fill in form two content for Document Types")
+    public void fillInFormTwoContentForDocumentTypes() {
+        clickFunction(fc.getSwitchUseCamera());
+        clickFunction(fc.getStageSelect());
+        clickFunction(fc.getSelectEmployment());
+        clickFunction(fc.getSelectContract());
     }
 }
