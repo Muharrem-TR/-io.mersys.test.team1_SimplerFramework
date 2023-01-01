@@ -23,22 +23,14 @@ Feature: Document Types under Parameters Setup Functionality
     And Click the Save button
     Then Success message should be displayed
 
-#
-#
-#  @Regression @DocumentTypes @DocumentTypesNegative
-#  Scenario: Delete Document Types
-#
-#    And Click on the element in the left Nav
-#      | setupOne      |
-#      | parameters    |
-#      | documentTypes |
-#
-#    And User delete item from Dialog
-#      | MuharremTR2626Edit |
-#
-#    Then Success message should be displayed
-#
-#
+
+  @Regression @DocumentTypes @DocumentTypesNegative
+  Scenario: Delete Document Types
+    And Delete "MuharremTR262626Edit"
+    Then Success message should be displayed
+
+
+
 #  @Regression @DocumentTypesNegative
 #  Scenario: Negative Delete Document Types
 #
