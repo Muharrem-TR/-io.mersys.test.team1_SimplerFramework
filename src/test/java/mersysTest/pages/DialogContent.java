@@ -1,8 +1,13 @@
 package mersysTest.pages;
 import mersysTest.utilities.BaseDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.List;
 
 
@@ -229,5 +234,24 @@ public class DialogContent extends BaseFunctions {
 
     public WebElement getCountryNameInput0() {
         return countryNameInput0;
+    }
+
+    public void SearchAndDelete(String searchText) {
+
+        //scrollUp()
+        sendKeysFunction(getSearchInput(),searchText);
+//        findAndSend("searchInput", searchText); // aranacak kelimeyi kutucuğa gönder
+        clickFunction(getSearchButton());
+//        findAndClick("searchButton"); // arama butonuna bas
+
+        //waitUntilLoading();
+
+        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"), "Search"));
+
+        clickFunction(getDeleteButton());
+//        findAndClick("deleteButton");// silme butonua bas
+        clickFunction(getDeleteDialogBtn());
+//        findAndClick("deleteDialogBtn");// dilogdaki silme butonuna bas
     }
 }
