@@ -87,4 +87,9 @@ public class DocumentTypesSteps extends BaseFunctions {
         clickFunction(fc.getSelectEmployment());
         clickFunction(fc.getSelectContract());
     }
+
+    @And("Delete {string}")
+    public void delete(String name) {
+        dc.SearchAndDelete(name);
+    }
 }
