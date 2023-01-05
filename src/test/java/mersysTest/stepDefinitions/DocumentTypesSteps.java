@@ -92,4 +92,9 @@ public class DocumentTypesSteps extends BaseFunctions {
     public void delete(String name) {
         dc.SearchAndDelete(name);
     }
+
+    @And("Press the search button")
+    public void pressTheSearchButton() {
+        clickFunction(dc.getSearchButton());
+    }
 }
