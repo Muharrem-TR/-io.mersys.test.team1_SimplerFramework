@@ -30,19 +30,8 @@ Feature: Document Types under Parameters Setup Functionality
     Then Success message should be displayed
 
 
-
-#  @Regression @DocumentTypesNegative
-#  Scenario: Negative Delete Document Types
-#
-#    And Click on the element in the left Nav
-#      | setupOne      |
-#      | parameters    |
-#      | documentTypes |
-#
-#    And User sending the keys in Dialog content
-#      | searchInput | MuharremTR2626Edit |
-#
-#    And Click on the element in the Dialog content
-#      | searchButton |
-#
-#    Then Verify that there is no data to display
+  @Regression @DocumentTypesNegative
+  Scenario: Negative Delete Document Types
+    And Type "MuharremTR2626Edit" in the search field
+    And Press the search button
+    Then Verify that there is no data to display
